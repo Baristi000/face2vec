@@ -7,5 +7,6 @@ class Setting():
     self.host = getenv("HOST")
     self.port = int(getenv("PORT"))
     self.model = None
+    self.vram_limit= int(getenv("VRAM_LIMIT"))
 
 settings = Setting()

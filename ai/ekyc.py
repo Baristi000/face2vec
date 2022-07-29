@@ -2,6 +2,7 @@ import cv2
 import imutils
 import dlib
 import numpy as np
+import tensorflow as tf
 
 from resources.config import settings
 from utils.ekyc_utils import *
@@ -33,4 +34,10 @@ def encoder(image: np.ndarray):
 def setting_up():
   dlib.DLIB_USE_CUDA=True
   settings.model = load_retrain(gen_model())
-  
+  gpus = tf.config.experimental.list_physical_devices('GPU')
+  if len(gpus) > 0:
+    for gpu in gpus:
+      tf.config.set_logical_device_configuration(
+        gpu,
+        [tf.config.LogicalDeviceConfiguration(memory_limit=settings.vram_limit)]
+      )
