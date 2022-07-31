@@ -19,10 +19,10 @@ def get_test():
     return "Hello from trieu ekyc"
 
 if __name__ == "__main__":
-  # conf.get_default().region = "ap"
-  # ngrok.set_auth_token("22B0LQqb9sYGi73L8xXh8JNFZve_43sVjPz4KcVRbVKTANns8")
-  # ngrok_tunnel = ngrok.connect(8001)
-  # print('Public URL:', ngrok_tunnel.public_url)
-  # nest_asyncio.apply()
-  # uvicorn.run("__main__:app", host=settings.host, port=settings.port, reload=True, workers=10)
+#   conf.get_default().region = "ap"
+#   ngrok.set_auth_token("22B0LQqb9sYGi73L8xXh8JNFZve_43sVjPz4KcVRbVKTANns8")
+#   ngrok_tunnel = ngrok.connect(settings.port)
+#   print('Public URL:', ngrok_tunnel.public_url)
+#   nest_asyncio.apply()
+#   uvicorn.run("__main__:app", host=settings.host, port=settings.port, reload=True, workers=10)
   uvicorn.run("__main__:app", host=settings.host, port=settings.port)

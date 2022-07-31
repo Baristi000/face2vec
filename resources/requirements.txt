@@ -4,5 +4,6 @@ python-dotenv
 opencv-python
 imutils
 dlib
+opencv-contrib-python
 python-multipart
 https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-2.9.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl

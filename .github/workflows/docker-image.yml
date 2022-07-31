@@ -1,0 +1,35 @@
+name: CI to Docker Hub
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: baristi000
+          password: 58651740-52ec-4e49-9f3c-eea17971be3c
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: baristi000/face2vec:latest
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}

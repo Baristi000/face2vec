@@ -1,0 +1,9 @@
+{
+    "200": "succeed",
+    "201000": "created",
+    
+    "500000": "internal server error",
+
+    "400045": "face not found",
+    "400049": "too many faces"
+}
