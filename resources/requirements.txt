@@ -1,9 +1,21 @@
 fastapi
+python-multipart
 uvicorn
+
 python-dotenv
+
 opencv-python
-imutils
+#imutils
 dlib
 opencv-contrib-python
-python-multipart
+
+arcface
+#resources/arcface.tar.gz
+astropy
+
+#tensorflow-macos
+#tensorflow-metal
 https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-2.9.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+
+# pyngrok
+# nest_asyncio

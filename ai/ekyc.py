@@ -1,5 +1,4 @@
 import cv2
-import imutils
 import dlib
 import numpy as np
 import tensorflow as tf
@@ -27,7 +26,7 @@ def encoder(image: np.ndarray):
     w = face[2]
     h = face[3]
     frame = image[y:y+h, x:x+w]
-    frame = cv2.resize(frame, (221, 221))
+    frame = cv2.resize(frame, (112, 112))
     frame = frame /255.
     frame = np.expand_dims(frame, axis=0)
     frames = [ frame, frame, frame ]
@@ -37,7 +36,7 @@ def encoder(image: np.ndarray):
       emb[0]
     )
   return response
-    
+
 def setting_up():
   dlib.DLIB_USE_CUDA=True
   gpus = tf.config.experimental.list_physical_devices('GPU')
