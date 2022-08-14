@@ -19,7 +19,8 @@ async def encode(
     contents = await image.read()
     cs2_image = bytes_to_cv2(contents)
     response = encoder(cs2_image)
-  except:
+  except Exception as e:
+    print(e)
     response.set_error_response(500000)
   return response
   

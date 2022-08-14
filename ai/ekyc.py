@@ -29,8 +29,7 @@ def encoder(image: np.ndarray):
     frame = cv2.resize(frame, (112, 112))
     frame = frame /255.
     frame = np.expand_dims(frame, axis=0)
-    frames = [ frame, frame, frame ]
-    emb = settings.model.predict(frames).tolist()
+    emb = settings.model.predict(frame).tolist()
     response.set_succeed_response(
       200,
       emb[0]
